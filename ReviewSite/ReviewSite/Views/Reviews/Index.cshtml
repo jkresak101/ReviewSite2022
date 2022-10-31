@@ -1,0 +1,58 @@
+﻿@model IEnumerable<ReviewSite.Models.Review>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Product Reviews</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Product Name
+            </th>
+            <th>
+                Reviewer Name
+            </th>
+            <th>
+                Product Review
+            </th>
+            <th>
+                Date
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td width>
+                @Html.DisplayFor(modelItem => item.Product.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Reviewer_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product_Review)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                <div class="w-75 btn-group" role="group">
+                <a asp-controller="Reviews" asp-action="Edit" asp-route-id="@item.Id"
+                class="btn btn-outline-secondary mx-2">Edit</a>
+                <a asp-action="Details" asp-route-id="@item.Id"
+                class=" btn btn-outline-primary mx-2">Details</a>
+                <a asp-action="Delete" asp-route-id="@item.Id"
+                class="btn btn-outline-danger mx-2">Delete</a>
+                </div>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

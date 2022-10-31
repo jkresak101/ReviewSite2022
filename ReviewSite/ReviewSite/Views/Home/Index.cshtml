@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Acquisitions, Inc Reviews";
+}
+
+<div class="text-center">
+    @*<h1 class="display-4">Acquisitions, Inc</h1>*@
+    <br /><br /><br /><br /><br />
+    <img src="~/lib/Images/logo-no-background.svg" />
+    <br /><br /><br /><br /><br />
+    <p>
+        Thank you for visiting our site! To check out our current reviews, or add one of your own, visit our
+        <a href="https://localhost:44380/Reviews">Product Review Page</a>.
+    </p>
+</div>
+<body>
+    <div class="container">
+        <div class="item item1"><img style=" display: inline; margin: 0 5px;" title="BIGBOY ANVIL" src=./lib/Images/Anvil.png alt="" width="150" /></div>
+        <div class="item item2"><img style=" display: inline; margin: 0 5px;" title="BRIGHT & SHINY" src=./lib/Images/NeonSign.png alt="" width="150" /></div>
+        <div class="item item3"><img style=" display: inline; margin: 0 5px;" title="QUACKQUACKQUACK" src=./lib/Images/RubberDucky.png alt="" width="150" /></div>
+        <div class="item item4"><button onclick="toggleNightMode()"> Night Night!</button></div>
+    </div>
+    
+    <style>
+        .container{
+            display: flex;
+            justify-content: center;
+            grid-gap: 20px;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+        }
+        .item4 {
+            grid-column: 3;
+            grid-row: 3 / span 3;
+        }
+    </style>
+    <script>
+        function toggleNightMode() {
+            let body = document.body;
+            body.classList.toggle("night");
+        }</script>
+</body>
+
